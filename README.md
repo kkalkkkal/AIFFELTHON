@@ -3,14 +3,27 @@
 
 
 # 개요
-
+저시력자들의 식중독 문제를 예방하기 위해 유통기한을 손쉽게 확인할 수 있는 어플 개발
 
 <br>
 
 
 # OCR 학습 <br>
+https://citrine-cashew-534.notion.site/OCR-35792a9663de4b5eab99bee838946bde
 
+<br>
 
+# 데이터 셋
+
+우유곽 데이터셋 : 직접 수집함
+
+한글 데이터 AI hub : [https://aihub.or.kr/aidata/133](https://aihub.or.kr/aidata/133)
+
+텍스트 생성기 : [https://textrecognitiondatagenerator.readthedocs.io/en/latest/index.html](https://textrecognitiondatagenerator.readthedocs.io/en/latest/index.html)
+
+형상 변환기 : [https://github.com/DaveLogs/TRDG2DTRB](https://github.com/DaveLogs/TRDG2DTRB)
+
+<br>
 
 # 프로토타입 동작 
 
