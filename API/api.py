@@ -1,21 +1,14 @@
-from fileinput import filename
 from flask import Flask, request, jsonify, render_template
 import os
-import numpy as np
+import json
 from collections import OrderedDict
 from datetime import datetime
-from werkzeug.utils import secure_filename
-from easyocr import Reader
-# from PIL import Image
-
-import torch
-import torch.backends.cudnn as cudnn
-import torch.utils.data
-import torch.nn.functional as F
+from easyocr.easyocr import *
 
 app = Flask(__name__)
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# GPU 설정
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
 
 def get_files(path):
     file_list = []
@@ -35,6 +28,7 @@ def get():
 
 @app.route('/image', methods=['POST'])
 def image(): 
+
     save_path = "./workspace/demo_images/"
     model_path = "./workspace/user_network_dir"
 
@@ -42,24 +36,48 @@ def image():
     # if os.listdir(save_path):
     #     os.remove(save_path)
 
+    # save image
     date = request.form['date']
     category = request.form['category']
     files = request.files.getlist("images[]")
     for f in files:
-        file_name = datetime.now().strftime('%Y%H%M%S')+".jpeg"
-        f.save(save_path+secure_filename(file_name))
-    
-    reader = Reader(['ko'], gpu=True,
+        file_name = datetime.now().strftime('%Y%m%d%H%M%S')+"_"+category+"_"+f.filename.split('.')[0]+".jpeg"
+        f.save(save_path+file_name)
+
+    # model
+    reader = Reader(['en'], gpu=True,
                     model_storage_directory=model_path,
                     user_network_directory=model_path,
                     recog_network='custom')
 
-    # files, count = get_files(save_path)
-    return jsonify("ss")
+    # json
+    json_data = OrderedDict()
+    json_list = []
+    
+    files, count = get_files(save_path)
+    
+    for idx, file in enumerate(files):
+        filename = os.path.basename(file)
+        result = reader.readtext(file)
+
+        # ./easyocr/utils.py 733 lines
+        # result[0]: bbox
+        # result[1]: string
+        # result[2]: confidence
+        for (bbox, string, confidence) in result:
+            print("filename: '%s', confidence: %.4f, string: '%s'" % (filename, confidence, string))
+            #json
+            json_data["img_name"] = str(filename)
+            json_data["time"] = str(datetime.now())
+            json_data["confience"] = str(confidence)
+            json_data["string"] = str(string)
+            json_data["category"] = str(filename.split('_')[1])
+            
+            json_list.append(json.dumps(json_data, ensure_ascii=False, indent="\t"))
+
+    return jsonify(json_list)
+
 
 
 if __name__ == "__main__":
     app.run(debug=True) 
-
-# set FLASK_APP=api.py 
-# flask run --host=0.0.0.0
