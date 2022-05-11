@@ -27,7 +27,7 @@ def get():
     return render_template("test.html")
 
 @app.route('/image', methods=['POST'])
-def image(): 
+def post(): 
 
     save_path = "./workspace/demo_images/"
     model_path = "./workspace/user_network_dir"
@@ -41,7 +41,7 @@ def image():
     category = request.form['category']
     files = request.files.getlist("images[]")
     for f in files:
-        file_name = datetime.now().strftime('%Y%m%d%H%M%S')+"_"+category+"_"+f.filename.split('.')[0]+".jpeg"
+        file_name = date+"_"+category+"_"+f.filename.split('.')[0]+".jpeg"
         f.save(save_path+file_name)
 
     # model

@@ -1,20 +1,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <h3>Hello!!</h3>
 insert image
-<form id="form" action="/image" method="post" enctype="multipart/form-data">
-<!-- <form id="form" > -->
+<!-- <form id="form" action="/image" method="post" enctype="multipart/form-data"> -->
+<form id="form" >
     <input type="text" id="category" name="category" value="category"/>
     <input type="text" id="date" name="date" value="2022-05-09"/>
     <input type="file" class="file" name="images[]" multiple="multiple"/>
-    <!-- <input type="button" value="확인" onclick="submitf()"> -->
-    <input type="submit" value="확인">
+    <input type="button" value="확인" onclick="submitf()">
+    <!-- <input type="submit" value="확인"> -->
 </form>
 <script>
 
     function submitf(){
-         //FormData 새로운 객체 생성 
-        // var formData = new FormData();
-        // 넘길 데이터를 담아준다. 
+    
         var data = {   
             "category" : $("#category").val(),
             "date"     : $("#date").val(),
@@ -23,33 +21,15 @@ insert image
         formData.append('category', $("#category").val());
         formData.append('date', $("#date").val());
         formData.append('file', $(".file").get(0).files[0]);
-        // console.log(formData.get('category'))
-        // console.log(formData.get('file'))
-        // input class 값 
-        // var fileInput = $('.files');
-        // // fileInput 개수를 구한다.
-        // for (var i = 0; i < fileInput.length; i++) {
-        // 	if (fileInput[i].files.length > 0) {
-        // 		for (var j = 0; j < fileInput[i].files.length; j++) {
-        // 			// console.log(" fileInput[i].files[j] :::"+ fileInput[i].files[j]);
-                    
-        // 			// formData에 'file'이라는 키값으로 fileInput 값을 append 시킨다.  
-        // 			formData.append('file', $('.files')[i].files[j]);
-        // 		}
-        // 	}
-        // }
-
-        // 'key'라는 이름으로 위에서 담은 data를 formData에 append한다. type은 json  
-        // formData.append('key', new Blob([ JSON.stringify(data) ], {type : "application/json"}));
 
         // ajax 처리 부분 * 
         $.ajax({
             url: '/image',
             type: "POST",
             data: formData,
-            contentType: false,               // * 중요 *
-            processData: false,               // * 중요 *
-            enctype : 'multipart/form-data',  // * 중요 *
+            contentType: false,               
+            processData: false,               
+            enctype : 'multipart/form-data',  
             success: function(data) {
                 console.log(data);
             }
