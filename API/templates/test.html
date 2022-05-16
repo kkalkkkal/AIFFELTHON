@@ -1,18 +1,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<h3>Hello!!</h3>
 insert image
-<!-- <form id="form" action="/image" method="post" enctype="multipart/form-data"> -->
-<form id="form" >
+<form id="form" action="/image" method="post" enctype="multipart/form-data">
+<!-- <form id="form" > -->
     <input type="text" id="category" name="category" value="category"/>
     <input type="text" id="date" name="date" value="2022-05-09"/>
     <input type="file" class="file" name="images[]" multiple="multiple"/>
-    <input type="button" value="확인" onclick="submitf()">
-    <!-- <input type="submit" value="확인"> -->
+    <!-- <input type="button" value="확인" onclick="submitf()"> -->
+    <input type="submit" value="확인">
 </form>
-<script>
+<!-- <script>
 
     function submitf(){
-    
+       
         var data = {   
             "category" : $("#category").val(),
             "date"     : $("#date").val(),
@@ -27,13 +26,13 @@ insert image
             url: '/image',
             type: "POST",
             data: formData,
-            contentType: false,               
-            processData: false,               
-            enctype : 'multipart/form-data',  
+            contentType: false,               // * 중요 *
+            processData: false,               // * 중요 *
+            enctype : 'multipart/form-data',  // * 중요 *
             success: function(data) {
                 console.log(data);
             }
         });
     }
    
-</script>
+</script> -->
