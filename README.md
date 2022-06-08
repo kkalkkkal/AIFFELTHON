@@ -7,13 +7,43 @@
 
 <br>
 
+# 프로젝트 소개
 
-# OCR 학습 <br>
+
+# 프로젝트 동기 
+
+
+
+# 프로젝트 주요 기능
+
+<br>
+
+# 사용 시나리오
+
+<br>
+
+# 개발 세부사항 
+
+<br> 
+
+## 시스템 설계도
+
+
+<br>
+
+# 개선 사항 
+
+
+
+
+
+## 참고자료 
+### OCR 학습 <br>
 https://citrine-cashew-534.notion.site/OCR-35792a9663de4b5eab99bee838946bde
 
 <br>
 
-# 데이터 셋
+### 데이터 셋
 
 우유곽 데이터셋 : 직접 수집함
 
@@ -25,6 +55,6 @@ https://citrine-cashew-534.notion.site/OCR-35792a9663de4b5eab99bee838946bde
 
 <br>
 
-# 프로토타입 동작 
+### 프로토타입 동작 
 
 https://www.youtube.com/embed/mOdvTOchP9I
