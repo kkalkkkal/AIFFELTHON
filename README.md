@@ -31,10 +31,16 @@
 # 프로젝트 주요 기능
 <img width="80%" src="https://user-images.githubusercontent.com/63850490/172521395-4fe971b7-8aa6-4298-9b94-839452de8704.png"/>
 
-<br>
+<br><
 
 # 사용 시나리오
 <img width="80%" src="https://user-images.githubusercontent.com/63850490/172521390-b255bab7-277f-4346-8128-7fdbfc7952db.png"/>
+
+1. 냉장고에서 손을 더듬어 우유곽을 집는다
+2. 우유곽의 상단을 촉각으로 찾아낸다
+3. (Talkback 이나 빅스비 음성 보조 AI를 통해) 앱을 켜고 카메라를 갖다 댄다
+4. 카메라를 통해 이미지 정보를 받은 앱이 알아서 우유곽을 인식하고, 유통기한 영역을 찾아 사용자에게 유통기한 정보를 음성으로 제공한다
+
 
 <br><br>
 
@@ -45,6 +51,16 @@
 ## 시스템 설계도
 <img width="80%" src="https://user-images.githubusercontent.com/63850490/172522531-377fd44b-3a18-46f5-ac70-429ecff921a1.png"/>
 
+- GCP Server => Flask (HTTP 기반 RESTful API )
+- Machine Learning(ML) : Object Detection(OD) 
+  1. Roboflow : bounding box(경계 박스)를 설정하고 데이터셋을 만드는 무료 도구이다. 학습용 데이터를 roboflow에 적재하고 경계 박스를 설정하여 데이터셋을 추출할 수 있다. 
+  2. YOLOv4 darknet : Object Detection을 위한 YOLO 알고리즘. YOLOv4 darknet 오픈소스를 활용하여 학습을 진행한다. <br> 그 데이터를 바탕으로 만들어낸 모델을 경량화 시켜 Tensorflow Lite의 객체 탐지 알고리즘에 적용한다.
+
+- EasyOCR : 무료 OCR 오픈소스. 따로 학습하여 개량한 EasyOCR로 탐지된 각 텍스트 영역별 이미지에서 텍스트 데이터를 추출한다
+
+- Google TTS : EasyOCR로 추출한 텍스트 정보를 전달하여 사용자에게 음성정보를 제공한다. 
+
+- Google ASR : 이와 별도로 제스처와 ASR(Auto Speak Response)기능을 통해 음성으로도 어플 조작을 가능하게 한다.
 
 
 
@@ -55,7 +71,20 @@
 ## 유통기한 탐지 모델링
 <img width="80%" src="https://user-images.githubusercontent.com/63850490/172521388-fd6f50c3-fd96-4490-87dc-82d98d1b87a0.png"/>
 
+기존 EfficientDet으로 만든 모델보다 YOLOv4의 darknet이 더 실시간성의 성능면에서 적합함.
+<br>
+Darknet으로 학습해서 얻어낸 가중치 weight을 tensorflow lite에서 사용될 수 있도록 tflite로 전환함.
 
+- mAP : 27.7% -> mAP : 62.6%, 총  34.9% 개선
+
+
+## OCR 개선
+
+
+
+
+
+<br><br><br>
 
 
 ## 참고자료 
