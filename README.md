@@ -15,19 +15,14 @@
 
 
 
-![20220608_113828]()
-![20220608_113813]()
-![20220608_113818]()
-![20220608_113820]()
-
 
 # 프로젝트 주요 기능
-<img width="80%" src="https://user-images.githubusercontent.com/63850490/172521390-b255bab7-277f-4346-8128-7fdbfc7952db.png"/>
+<img width="80%" src="https://user-images.githubusercontent.com/63850490/172521395-4fe971b7-8aa6-4298-9b94-839452de8704.png"/>
 
 <br>
 
 # 사용 시나리오
-<img width="80%" src="https://user-images.githubusercontent.com/63850490/172521395-4fe971b7-8aa6-4298-9b94-839452de8704.png"/>
+<img width="80%" src="https://user-images.githubusercontent.com/63850490/172521390-b255bab7-277f-4346-8128-7fdbfc7952db.png"/>
 
 <br>
 
