@@ -11,8 +11,8 @@
 <img width="80%" src="https://user-images.githubusercontent.com/63850490/172521378-ea3e1dbf-38e9-4826-9e74-fec97ba9ba43.png"/>
 
 # 프로젝트 동기 
+<img width="80%" src="https://user-images.githubusercontent.com/63850490/172521396-d93f2c8c-98ba-41c2-840a-bfbc66f87e50.png"/>
 
-<img width="80%" src="https://user-images.githubusercontent.com/63850490/172521388-fd6f50c3-fd96-4490-87dc-82d98d1b87a0.png"/>
 
 
 ![20220608_113828]()
@@ -32,7 +32,7 @@
 <br>
 
 # 개발 세부사항 
-<img width="80%" src="https://user-images.githubusercontent.com/63850490/172521396-d93f2c8c-98ba-41c2-840a-bfbc66f87e50.png"/>
+<img width="80%" src="https://user-images.githubusercontent.com/63850490/172521388-fd6f50c3-fd96-4490-87dc-82d98d1b87a0.png"/>
 
 <br> 
 
