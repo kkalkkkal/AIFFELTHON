@@ -43,6 +43,9 @@
 <br> <br>
 
 ## 시스템 설계도
+<img width="80%" src="https://user-images.githubusercontent.com/63850490/172522531-377fd44b-3a18-46f5-ac70-429ecff921a1.png"/>
+
+
 
 
 <br><br>
@@ -51,7 +54,6 @@
 
 ## 유통기한 탐지 모델링
 <img width="80%" src="https://user-images.githubusercontent.com/63850490/172521388-fd6f50c3-fd96-4490-87dc-82d98d1b87a0.png"/>
-
 
 
 
