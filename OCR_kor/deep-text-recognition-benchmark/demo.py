@@ -264,4 +264,4 @@ if __name__ == '__main__':
     #demo(opt) 
 
     
-    app.run(debug=True,host='104.196.238.4', port=8080)
+    app.run(debug=True,host='0.0.0.0', port=8080)
