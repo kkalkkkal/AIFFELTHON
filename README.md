@@ -1,4 +1,4 @@
-# AIFFEL_HACKERTON
+# AIFFELTHON
 아이펠 양재 2기 해커톤, 주제-유통기한 리더기(OCR) 
 
 
@@ -82,7 +82,7 @@ Darknet으로 학습해서 얻어낸 가중치 weight을 tensorflow lite에서 �
 [기존 OCR 모델을 개선하려고 했으나 초기 모델보다 서비스할 수준의 퍼포먼스를 확보하지 못함. 
 ](https://www.notion.so/modulabs/OCR-3b7f79c4984f48028a01ff5abe664405)
 
-
+그래서 초기 모델을 그대로 사용.
 
 <br><br><br>
 
